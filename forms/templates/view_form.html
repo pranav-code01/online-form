@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ form.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <h1>{{ form.title }}</h1>
+
+        {% if success %}
+            <p class="success">{{ success }}</p>
+        {% endif %}
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <br><br>
+
+            <label>Roll No:</label>
+            <input type="text" name="roll_no" required>
+
+            <br><br>
+
+            <label>Email ID:</label>
+            <input type="email" name="email" required>
+
+            <br><br>
+
+            <label>Mobile No:</label>
+            <input type="tel" name="mobile" required>
+
+            <br><br>
+
+            <label>Address:</label>
+            <textarea name="address" rows="4" required></textarea>
+
+            <br><br>
+
+            <button type="submit">
+                Submit Response
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

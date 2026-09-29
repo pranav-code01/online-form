@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3 {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+}
+
+.create-btn {
+    display: block;
+    margin: 20px auto;
+}
+
+.forms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.form-card h3 {
+    margin-top: 0;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.response-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.response-table th,
+.response-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.response-table th {
+    font-weight: bold;
+}
+
+.response-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background-color: white;
+    width: 350px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.login-card h1 {
+    margin-bottom: 5px;
+}
+
+.login-card p {
+    text-align: center;
+    color: #666;
+}
+
+.login-card label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.error {
+    color: red !important;
+}
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .form-card {
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons a,
+    .buttons button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .response-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+    }
+
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.top-bar span {
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+}

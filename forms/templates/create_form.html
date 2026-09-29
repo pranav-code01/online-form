@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Create Form</h1>
+
+    <p>Student Registration Form</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <button type="submit">Create Form</button>
+    </form>
+
+</body>
+</html>

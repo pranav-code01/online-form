@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Form</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Login / Register / Logout -->
+
+        <div class="top-bar">
+
+            {% if user.is_authenticated %}
+
+                <span>Welcome, {{ user.username }}</span>
+
+                <a href="/logout/">
+                    <button type="button">Logout</button>
+                </a>
+
+            {% else %}
+
+                <a href="/login/">
+                    <button type="button">Login</button>
+                </a>
+
+                <a href="/register/">
+                    <button type="button">Register</button>
+                </a>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Main Heading -->
+
+        <h1>Online Form</h1>
+
+        <p class="subtitle">
+            Create forms and collect responses easily.
+        </p>
+
+
+        <a href="/create/">
+            <button class="create-btn" type="button">
+                + Create Form
+            </button>
+        </a>
+
+
+        <hr>
+
+
+        <h2>Your Forms</h2>
+
+        <div class="forms-container">
+
+            {% for form in forms %}
+
+                <div class="form-card">
+
+                    <h3>{{ form.title }}</h3>
+
+                    <div class="buttons">
+
+                        <a href="/form/{{ form.id }}/">
+                            <button type="button">
+                                Open Form
+                            </button>
+                        </a>
+
+                        <a href="/responses/{{ form.id }}/">
+                            <button type="button">
+                                View Responses
+                            </button>
+                        </a>
+
+                        <button
+                            type="button"
+                            onclick="copyLink('{{ request.scheme }}://{{ request.get_host }}/form/{{ form.id }}/')">
+                            Copy Link
+                        </button>
+
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p>No forms created yet.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Copy Link JavaScript -->
+
+    <script>
+
+        function copyLink(link) {
+
+            navigator.clipboard.writeText(link);
+
+            alert("Form link copied!");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responses</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <h1>{{ form.title }}</h1>
+
+            <h2>Submitted Responses</h2>
+
+            {% if responses %}
+
+            <table class="response-table">
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Email ID</th>
+                        <th>Mobile No</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for response in responses %}
+
+                    <tr>
+                        <td>{{ response.name }}</td>
+                        <td>{{ response.roll_no }}</td>
+                        <td>{{ response.email }}</td>
+                        <td>{{ response.mobile }}</td>
+                        <td>{{ response.address }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+                <p>No responses submitted yet.</p>
+
+            {% endif %}
+
+            <br>
+
+            <a href="/">
+                <button type="button">Back to Home</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
